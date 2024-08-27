@@ -4,7 +4,7 @@ y.setProperty("rate",150)
 def speak(set):
     y.say(set)
     y.runAndWait()
-#speak("This is a progarm to calculate new tax regeme")
+speak("This is a progarm to calculate new tax regeme")
 class tax:
     def __init__(self,x):
         self.gross=x
@@ -43,8 +43,9 @@ class tax:
             hero6=(net_nettaxable-1500000)*30/100
             print(cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6)
             
-p=int(input("Enter your gross income(if you don't donn't know just write  'n'):")) 
-if p.lower()=="n":
+q=int(input("Enter your gross income(if you don't donn't know just write  'n'):")) 
+p=int(q)
+if q.lower()=="n":
     print("Hello")
 else:
     pass

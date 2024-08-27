@@ -1,4 +1,5 @@
 import pyttsx3 as r
+from num2words import num2words
 y=r.init()
 y.setProperty("rate",150)
 def speak(set):
@@ -8,7 +9,7 @@ speak("This is a progarm to calculate new tax regeme")
 class tax:
     def __init__(self,x):
         self.gross=x
-        net_nettaxable=self.gross-75000
+        net_nettaxable=self.gross-75000#Standard deduction
         def cess(x):
             return 4/100*x 
         if net_nettaxable<=300000:
@@ -21,20 +22,21 @@ class tax:
             hero=400000*5/100
             hero1=(net_nettaxable-700000)*10/100
             print(cess(hero1+hero)+hero+hero1)
-            speak(f"You have to pay{cess(hero1+hero)+hero+hero1} ")
+            op=cess(hero1+hero)+hero+hero1
+            speak(f"You have to pay{num2words(op)} ")
         elif 1000000<net_nettaxable<=1200000:
             hero=400000*5/100
             new=300000*10/100
             hero2=(net_nettaxable-1000000)*15/100
             print(cess(hero+new+hero2)+hero+new+hero2)
-            speak(f"You have to give{cess(hero+new+hero2)+hero+new+hero2}")
+            speak(f"You have to give{num2words(cess(hero+new+hero2)+hero+new+hero2)}")
         elif 1200000<net_nettaxable<=1500000:
             hero=400000*5/100
             new=300000*10/100
             hero4=200000*15/100
             hero5=(net_nettaxable-1200000)*20/100
             print(cess(hero+new+hero4+hero5)+hero+new+hero4+hero5)
-            speak(f"You have to give{cess(hero+new+hero4+hero5)+hero+new+hero4+hero5}")
+            #speak(f"You have to give{cess(hero+new+hero4+hero5)+hero+new+hero4+hero5}")
         else :
             hero=400000*5/100 
             new=300000*10/100
@@ -44,8 +46,8 @@ class tax:
             print(cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6)
             speak(f"You have to give{cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6}")
             
-q=input("Enter your gross income(including other income if you have):")
-p=int(q)
+p=int(input("Enter your gross income(including other income if you have):"))
+
 q=input("Do you have any deductions? write'y' for yes and 'n' for no:")
 #These are for all the deductions 
 if q.lower()=="y":

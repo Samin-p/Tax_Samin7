@@ -21,18 +21,20 @@ class tax:
             hero=400000*5/100
             hero1=(net_nettaxable-700000)*10/100
             print(cess(hero1+hero)+hero+hero1)
+            speak(f"You have to pay{cess(hero1+hero)+hero+hero1} ")
         elif 1000000<net_nettaxable<=1200000:
             hero=400000*5/100
             new=300000*10/100
             hero2=(net_nettaxable-1000000)*15/100
             print(cess(hero+new+hero2)+hero+new+hero2)
-            speak(f"You have to give{cess(hero)}")
+            speak(f"You have to give{cess(hero+new+hero2)+hero+new+hero2}")
         elif 1200000<net_nettaxable<=1500000:
             hero=400000*5/100
             new=300000*10/100
             hero4=200000*15/100
             hero5=(net_nettaxable-1200000)*20/100
             print(cess(hero+new+hero4+hero5)+hero+new+hero4+hero5)
+            speak(f"You have to give{cess(hero+new+hero4+hero5)+hero+new+hero4+hero5}")
         else :
             hero=400000*5/100 
             new=300000*10/100
@@ -40,6 +42,7 @@ class tax:
             hero5=300000*20/100
             hero6=(net_nettaxable-1500000)*30/100
             print(cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6)
+            speak(f"You have to give{cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6}")
             
 q=input("Enter your gross income(including other income if you have):")
 p=int(q)

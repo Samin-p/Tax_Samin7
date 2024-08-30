@@ -1,5 +1,6 @@
 import pyttsx3 as r
 from num2words import num2words
+import os
 y=r.init()
 y.setProperty("rate",150)
 def speak(set):

@@ -18,6 +18,7 @@ class tax:
         net_nettaxable=self.gross-75000#Standard deduction
         def cess(x):
             return 4/100*x 
+            
         if net_nettaxable<=300000:
             c(speak("Nil.you don't have to pay tax"))
             c(print("Nil.you don't have to pay tax"))
@@ -49,8 +50,21 @@ class tax:
             hero4=200000*15/100
             hero5=300000*20/100
             hero6=(net_nettaxable-1500000)*30/100
-            c(print(cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6))
-            c(speak(f"You have to give{cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6}"))
+            b=hero+hero4+hero5+hero6+new
+            print(b)
+            
+            if 5000000<net_nettaxable<=10000000:
+                b=b*10/100
+            elif 10000000<net_nettaxable<=20000000:
+                b=b*15/100
+            elif 20000000<net_nettaxable<=50000000:
+                b=b*25/100
+            elif 50000000<net_nettaxable:
+                b=b*37/100
+            print(cess(hero+new+hero4+hero5+hero6+b),"is the cess")
+            print(b)
+            c(print(cess(hero+new+hero4+hero5+hero6+b)+hero+new+hero4+hero5+hero6+b))
+            c(speak(f"You have to give{cess(hero+new+hero4+hero5+hero6)+hero+new+hero4+hero5+hero6+b}"))
 c(speak("Enter your gross income (including other income if you have)"))            
 p=int(input("Enter your gross income(including other income if you have):"))
 
